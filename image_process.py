@@ -37,7 +37,9 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 for root,dirs, files in os.walk(destination_folder):
     for filename in files:
-        if filename[-3:] != "jpg":
+        rules = [filename[-3:] != "jpg",
+                 filename[-3:] != "JPG"]
+        if all(rules):
             print("Converting", filename, "to jpg.")
             im = Image.open(destination_folder + filename)
             png_filename = filename[:-3] + "jpg"
@@ -47,5 +49,7 @@ for root,dirs, files in os.walk(destination_folder):
             rgb_im.save(destination_folder + png_filename, 'JPEG', quality=95)
             os.remove(destination_folder + filename)
             print(".png converted to .jpg and original .png removed.")
+
+
 
 input("Everything done! Press enter to exit.")
