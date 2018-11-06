@@ -20,7 +20,7 @@ for root, dirs, files in os.walk(image_folder):
     for filename in files:
         print(filename)
         full_path = image_folder + filename
-        new_file = filename[-3:] + str(random.randint(1,999)) + "." + filename[-3:]
+        new_file = filename[-3:] + str(random.randint(1,999999)) + "." + filename[-3:]
         shutil.move(full_path, (destination_folder + new_file))
     else:
         print("No files in " + image_folder)
