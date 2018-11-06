@@ -1,0 +1,2 @@
+fake-useragent == 0.1.11
+instapy-cli == 0.0.6
