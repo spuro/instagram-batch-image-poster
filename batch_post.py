@@ -55,9 +55,11 @@ for root, dirs, files in os.walk(post_from):
     for filename in files:
         print(filename)
         print("instapy -u \"" + username + "\" -p \"" + password + "\" -f \"" + post_from + filename + "\" -t test")
-        os.system("instapy -u \"" + username + "\" -p \"" + password + "\" -f \"" + post_from + filename + "\" -t \"test\"")
+        os.system("instapy -u \"" + username + "\" -p \"" + password + "\" -f \"" + post_from + filename + "\" -t \"test")
         #following line waits for specified range of time
         #default is between 10,800 seconds (3 hours) and 18,000 seconds (5 hours)
+        os.remove(post_from + filename)
+        print("Image was posted. Now waiting for 3 - 5 hrs")
         time.sleep(random.randint(10800,18000))
 
 input("You're out of images! Press enter to exit.")

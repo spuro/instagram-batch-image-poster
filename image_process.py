@@ -55,7 +55,9 @@ for root, dirs, files in os.walk(destination_folder):
             print(".png converted to .jpg and original .png removed.")
 
 #Since the posting bot requires images with an aspect ratio of 1:1:
-##This chunk adds white borders around each image to make it 1:1 without any cropping.
+#This chunk adds white borders around each image to make it 1:1 without any cropping.
+#Heavy credit to "Jay D." from the following stackoverflow question:
+#https://stackoverflow.com/questions/44370469/python-image-resizing-keep-proportion-add-white-background
 for root, dirs, files in os.walk(destination_folder):
     for filename in files:
         print(filename)
