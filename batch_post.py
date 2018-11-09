@@ -29,7 +29,7 @@ else:
     #double checking your proxy is in place
     #safety precaution as accidentally using the wrong ip once on insta could get you banned
     print("Your current IP is:")
-    htmlfile = urllib.request.urlopen("http://v6.ipv6-test.com/api/myip.php")
+    htmlfile = urllib.request.urlopen("http://v4v6.ipv6-test.com/api/myip.php")
     htmltext = htmlfile.read()
     ip = "colored.clickselect".encode()
     print(htmltext)
