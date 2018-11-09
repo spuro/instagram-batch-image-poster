@@ -1,10 +1,14 @@
 import os
 import time
 import random
-import urllib.request
 import sys
 from fake_useragent import UserAgent
 from json import load
+import urllib.request
+try:
+    from urllib.request import urlopen
+except:
+    from urllib2 import urlopen
 
 #specifies useragent, this sort of precaution is necessary if you wish to bot continously
 ua = UserAgent()
